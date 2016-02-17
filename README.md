@@ -4,7 +4,8 @@ MBot Code
 # Dev Environment
 I use code blocks build a test harness that I can develop programs in and run easily from the mBlock IDE. 
 
-Checkout demo video at: https://www.youtube.com/watch?v=Z7oJCq3xNSM
+Checkout demo video on youtube
+[![Demo Video](http://img.youtube.com/vi/Z7oJCq3xNSM/0.jpg)](http://www.youtube.com/watch?v=Z7oJCq3xNSM)
 
 ## Overview
 This project provides a simple development harness for building mBot programs.
@@ -21,8 +22,12 @@ The source for this test harness is under `src/scratch/botOS.sb2`
 
 ## Entry points
 These are the two ways to launch the program you write:
-* `when (green flag) clicked` - this is what I call dev mode. It lets me run the user program while still connected to the USB
-* `mBot Program` - this is the code that will be uploaded to Arduino and run on the mBot
+
+### when (green flag) clicked
+This is what I call dev mode. It lets me run the user program while still connected to the USB. I also tend to perch the mBot on top of a small drinking glass. This acts like a mini car lift to keep the wheels off the ground while developing and testing.
+
+###mBot Program
+This is the code that will be uploaded to Arduino and run on the mBot
 
 Note mBot programs can only use a subset of scratch commands. Things like `Motion` and `Looks` and `Pen` are just for desktop Scratch programs designed to run on your computer. It makes no sense, for example, to make the Panda say something in or move him across the screen when the program is meant to run on the mBot (which has no keyboard, no screen).
 
