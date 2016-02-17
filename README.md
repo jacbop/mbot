@@ -1,8 +1,8 @@
 # mbot
-MBot Code
+MBot Developers Test Harness
 
 # Dev Environment
-I use code blocks build a test harness that I can develop programs in and run easily from the mBlock IDE. 
+I use code blocks to build a test harness that I can develop programs in and run easily from within the mBlock IDE as well as upload to Arduino. 
 
 Checkout demo video on youtube
 
@@ -12,7 +12,7 @@ Checkout demo video on youtube
 This project provides a simple development harness for building mBot programs.
 
 1. The harness starts up up with a distinctive tone and *flashing green lights* to let the user know it is ready to run.
-2. Once the user pushes and releases the button the mBot, the *lights go blue* and the user's code is run
+2. Once the user pushes and releases the button on the mBot, the *lights go blue* and the user's code is run
 3. Once the user's code completes, the *lights go red*, all the motors are shutdown and a different distinctive tone is played.
 
 Additionally, the user can debug and test his program in the mBlock IDE. In addition to the lights and sounds, the user will be able to monitor a variable called `state`. These different ways of giving the user feedback can help speed up development, diagnosis and debugging.
@@ -76,3 +76,33 @@ Are you expecting the bot to respond but it is not; for instance not responding 
 
 ## reboot needed?
 If you just can't get the serial port working after power cycling the bot and swapping out your UBS cable, reboot your machine and then consider reinstalling the Arduino driver.
+
+## Sorry, I still don't get it?
+* Download the `src/scratch/botOS.sb2` file from this project.
+* Open that up in your mBlock application
+* Start adding your code under the `userProgram` code block
+* Make sure you are connected to your mBot via USB cable
+* Make sure the serial port is connected
+* Make sure you have reset to the default program
+* Click the green flag and the main program should run
+* You should hear a tone (like the NBC jingle) and the LEDs should be flashing green
+* Press the button on the mBot and the LED should go blue and run your program (whatever you added to the botOS file)
+* After your program finishes the LED should go red and the mBot should stop
+* You can hit the green flag icon again to rerun the main program
+
+To upload your program to the mBot:
+* Make sure you are connected to your mBot via USB cable
+* Make sure the serial port is connected
+* Make sure you have reset to the default program
+* Right click on the `mBot Program`
+* Choose `upload to arduino`
+* Click the `Upload to Arduino` button
+* Wait for the code to compile and upload to the mBot
+* Dismiss the `Upload Finish` pop up 
+* Unplug the USB cable
+* You should hear a tone (like the NBC jingle) and the LEDs should be flashing green
+* Press the button on the mBot and the LED should go blue and run your program (whatever you added to the botOS file)
+* After your program finishes the LED should go red and the mBot should stop
+* You can hit the reset button on the mBot to relaunch the main program
+* Remember to plug back in the USB cable, connect to the serial port and reset the default program if you want to do further development.
+
