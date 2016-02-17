@@ -8,6 +8,7 @@ Checkout demo video at: https://www.youtube.com/watch?v=Z7oJCq3xNSM
 
 ## Overview
 This project provides a simple development harness for building mBot programs.
+
 1. The harness starts up up with a distinctive tone and *flashing green lights* to let the user know it is ready to run.
 2. Once the user pushes and releases the button the mBot, the *lights go blue* and the user's code is run
 3. Once the user's code completes, the *lights go red*, all the motors are shutdown and a different distinctive tone is played.
@@ -29,6 +30,7 @@ You can write hybrid programs, for instance, steering the mBot with arrows in th
 
 ## Main Program
 This code block gives the user feedback as it works through several steps to run the users program. Think of it as the worlds simplest operating system. The main program can be launched either in dev mode as an mBot program. There is a variable `state` that you can monitor in the staging area when running in dev mode. This will tell you where your program is at that moment. The values of `state` are:
+
 0. started
 1. intro routine started. Distinctive tone played and lights are flashing green. Waiting for the user to push the button on the mBot
 2. user has pushed button on the mBot, but not released it yet. Light is a solid green.
