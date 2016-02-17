@@ -31,12 +31,12 @@ You can write hybrid programs, for instance, steering the mBot with arrows in th
 ## Main Program
 This code block gives the user feedback as it works through several steps to run the users program. Think of it as the worlds simplest operating system. The main program can be launched either in dev mode as an mBot program. There is a variable `state` that you can monitor in the staging area when running in dev mode. This will tell you where your program is at that moment. The values of `state` are:
 
-0. started
-1. intro routine started. Distinctive tone played and lights are flashing green. Waiting for the user to push the button on the mBot
-2. user has pushed button on the mBot, but not released it yet. Light is a solid green.
-3. user has released the button and the user program is being invoked. Light is solid blue.
-4. user program has ended, running exit routine. Light is solid red. Motors have been stopped. Distinctive toned played.
-5. main program has exited. Will need to hit reset on mBot to rerun.
+* 0 - started
+* 1 - intro routine started. Distinctive tone played and lights are flashing green. Waiting for the user to push the button on the mBot
+* 2 - user has pushed button on the mBot, but not released it yet. Light is a solid green.
+* 3 - user has released the button and the user program is being invoked. Light is solid blue.
+* 4 - user program has ended, running exit routine. Light is solid red. Motors have been stopped. Distinctive toned played.
+* 5 - main program has exited. Will need to hit reset on mBot to rerun.
 
 ## User Program
 The user code goes here. It will be invoked as described above. It is important to only use the subset of Scratch together with the `Robots` library since the user program must run in dev mode as well as an mBot program.
