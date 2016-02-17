@@ -4,7 +4,7 @@ MBot Code
 # Dev Environment
 I use code blocks build a test harness that I can develop programs in and run easily from the mBlock IDE. 
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+Checkout demo video at: https://www.youtube.com/watch?v=Z7oJCq3xNSM
 
 ## Overview
 This project provides a simple development harness for building mBot programs.
@@ -13,6 +13,10 @@ This project provides a simple development harness for building mBot programs.
 3) Once the user's code completes, the *lights go red*, all the motors are shutdown and a different distinctive tone is played.
 
 Additionally, the user can debug and test his program in the mBlock IDE. In addition to the lights and sounds, the user will be able to monitor a variable called `state`. These different ways of giving the user feedback can help speed up development, diagnosis and debugging.
+
+![alt text](https://github.com/jacbop/mbot/raw/master/src/common/images/20160217.code.png "Example Code")
+
+The source for this test harness is under `src/scratch/botOS.sb2`
 
 ## Entry points
 These are the two ways to launch the program you write:
