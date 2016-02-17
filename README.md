@@ -1,5 +1,6 @@
 # mbot
 MBot Developers Test Harness
+This information is based on mBlock 3.2.2
 
 # Dev Environment
 I use code blocks to build a test harness that I can develop programs in and run easily from within the mBlock IDE as well as upload to Arduino. 
