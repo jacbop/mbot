@@ -1,6 +1,6 @@
 # mbot
 MBot Developers Test Harness
-This information is based on mBlock 3.2.2
+This information is based on mBlock 3.2.2 and Arduino 1.6.5
 
 # Dev Environment
 I use code blocks to build a test harness that I can develop programs in and run easily from within the mBlock IDE as well as upload to Arduino. 
@@ -78,6 +78,18 @@ Are you expecting the bot to respond but it is not; for instance not responding 
 ## reboot needed?
 If you just can't get the serial port working after power cycling the bot and swapping out your UBS cable, reboot your machine and then consider reinstalling the Arduino driver.
 
+## crashing and errors
+mBlock will allow you to do back things, especially with variables and code blocks. The generated Arduino code may not be valid and can cause your program to not run, have errors or even crash the IDE.
+May sure you did not 
+* name a variable or code block using an arduino reserved word (e.g. for, switch, break, continue, return, etc)
+* use the name of a global variable or function that already exists in the arduino program (e.g. main, INPUT, HIGH)
+* use a name that is not a valid Arduino identifier (e.g. does not start with a number, contains spaces or invalid punctionation )
+
+## Where is the source code for the mBot Default Program?
+https://github.com/Makeblock-official/mBot
+You need to clone the whole repo, not just pick out the mBot-default-program.ino source. This file depends on header files in the same directory.
+After cloning simply open up mBot-default-program.ino in the Arduino IDE
+
 ## Sorry, I still don't get it?
 * Download the `src/scratch/botOS.sb2` file from this project.
 * Open that up in your mBlock application
@@ -107,3 +119,18 @@ To upload your program to the mBot:
 * You can hit the reset button on the mBot to relaunch the main program
 * Remember to plug back in the USB cable, connect to the serial port and reset the default program if you want to do further development.
 
+## Arduino? What about Arduino
+You can export the Arduino code that Scratch generates to the Arduino IDE. Make sure to download and install the correct version of the Arduino development environment to match your mBlock version.
+After clicking the `Edit in Arduino IDE` button, the Arduino GUI will launch with your code in an editor window.
+Make sure to shut down mBlock so there are not conflicts around the serial port.
+Choose the board from the `Tools` menu. The mBot is based upon the `Arduino Uno`
+Double check that the serial port is correct and connected
+Double check that the programmer is AVRISP mkii
+You can now compile/verify or upload to the mBot just as you did from the mBlock IDE. 
+But at this point you have more control writing Arduino code.
+If you go back to mBlock you will need to reset the default program again.
+
+Do not use a separate download of the Arduino GUI. You want to use the version that comes bundled with mBlock. You can launch it via the method described above. Once it is running you can save a shortcut back to this executable.
+If you use a "vanilla" version that you downloaded separately, you are likely to have compile errors and missing librarries (e.g. MeMCore.h: file not found)
+
+https://www.arduino.cc/en/Reference/HomePage?from=Reference.Extended
