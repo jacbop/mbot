@@ -62,12 +62,17 @@ run forward at speed 0
 Double check that the USB cable is plugged in and the serial port connected again before trying to run something in dev mode or upload an update to arduino. The head in the GUI should tell you if you are connected or not.
 
 ## bluetooth problems?
-You cannot connect via bluetooth to run stuff in dev mode, but to reset the default program or upload your updated code, it seems you must use the USB cable.
+You can connect via bluetooth to run stuff in dev mode, but to reset the default program or upload your updated code, it seems you must use the USB cable.
 
 ## reset default program?
 If you have uploaded your own software to arduino then you will need to `Reset Default Program` from the `Connect` menu.
 You can not run in dev mode without doing this first. This can be very confusing the bot may appear to be running your latest program updates, but it is actually running that last version to uploaded to arduino. You most recent changes are not running and the bot is not responding to the green flag button in the IDE.
 Also the IR remote will not work without the default program.
+
+## where is the source code for the mBot Default Program?
+https://github.com/Makeblock-official/mBot
+You need to clone the whole repo, not just pick out the mBot-default-program.ino source. This file depends on header files in the same directory.
+After cloning simply open up mBot-default-program.ino in the Arduino IDE
 
 ## is program still running?
 Do you have a program that is still running on the bot? Perhaps you are in a loop and the bot is not responding. Hit the reset button on the bot to start your program over. Or reset the default program.
@@ -85,15 +90,10 @@ May sure you did not
 * use the name of a global variable or function that already exists in the arduino program (e.g. main, INPUT, HIGH)
 * use a name that is not a valid Arduino identifier (e.g. does not start with a number, contains spaces or invalid punctionation )
 
-## it is running really slowly
-As the size of the Scratch program grows, you may notice things slowing down. There may be longer pauses between musical notes, It seems sluggish when you hit the reset button. But when you upload your program to Arduino and notice that it will likely run nice and peppy at normal speed.
-This is because when running in dev mode there is emulation happening to bridge your Scratch code with the mBot hardware. If your machine is heavily loaded or the Scratch program is very large then things can get sluggish. There may be long pauses between those quarter notes in your song.
-Try rebooting your machine and relaunching the mBlock IDE. Try running a simpler Scratch program and definitely try uploading to Arduino to confirm that the problem is with Scratch. You may also want to check the batteries. Things do start to get sluggish when the batteries get low.
-
-## where is the source code for the mBot Default Program?
-https://github.com/Makeblock-official/mBot
-You need to clone the whole repo, not just pick out the mBot-default-program.ino source. This file depends on header files in the same directory.
-After cloning simply open up mBot-default-program.ino in the Arduino IDE
+## running really slowly?
+As the size of the Scratch program grows or the load on your computer increases, you may notice things slowing down. There may be longer pauses between musical notes, It seems sluggish when you hit the reset button. But when you upload your program to Arduino and notice that it will likely run nice and peppy at normal speed.
+This is because when running in dev mode there is emulation happening to bridge your Scratch code with the mBot hardware. If your machine is heavily loaded or the Scratch program is very large then things can get sluggish. There may be long pauses between those eith notes in your song.
+Try rebooting your machine and relaunching the mBlock IDE. Try running a simpler Scratch program and definitely try uploading to Arduino to confirm that the problem is with Scratch and not a bug in your code. You may also want to check the batteries. Things do start to get sluggish when the batteries get low.
 
 ## Sorry, I still don't get it?
 * Download the `src/scratch/botOS.sb2` file from this project.
