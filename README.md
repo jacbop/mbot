@@ -85,7 +85,12 @@ May sure you did not
 * use the name of a global variable or function that already exists in the arduino program (e.g. main, INPUT, HIGH)
 * use a name that is not a valid Arduino identifier (e.g. does not start with a number, contains spaces or invalid punctionation )
 
-## Where is the source code for the mBot Default Program?
+## it is running really slowly
+As the size of the Scratch program grows, you may notice things slowing down. There may be longer pauses between musical notes, It seems sluggish when you hit the reset button. But when you upload your program to Arduino and notice that it will likely run nice and peppy at normal speed.
+This is because when running in dev mode there is emulation happening to bridge your Scratch code with the mBot hardware. If your machine is heavily loaded or the Scratch program is very large then things can get sluggish. There may be long pauses between those quarter notes in your song.
+Try rebooting your machine and relaunching the mBlock IDE. Try running a simpler Scratch program and definitely try uploading to Arduino to confirm that the problem is with Scratch. You may also want to check the batteries. Things do start to get sluggish when the batteries get low.
+
+## where is the source code for the mBot Default Program?
 https://github.com/Makeblock-official/mBot
 You need to clone the whole repo, not just pick out the mBot-default-program.ino source. This file depends on header files in the same directory.
 After cloning simply open up mBot-default-program.ino in the Arduino IDE
