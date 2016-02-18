@@ -120,17 +120,18 @@ To upload your program to the mBot:
 * Remember to plug back in the USB cable, connect to the serial port and reset the default program if you want to do further development.
 
 ## Arduino? What about Arduino
-You can export the Arduino code that Scratch generates to the Arduino IDE. Make sure to download and install the correct version of the Arduino development environment to match your mBlock version.
-After clicking the `Edit in Arduino IDE` button, the Arduino GUI will launch with your code in an editor window.
-Make sure to shut down mBlock so there are not conflicts around the serial port.
-Choose the board from the `Tools` menu. The mBot is based upon the `Arduino Uno`
-Double check that the serial port is correct and connected
-Double check that the programmer is AVRISP mkii
-You can now compile/verify or upload to the mBot just as you did from the mBlock IDE. 
-But at this point you have more control writing Arduino code.
-If you go back to mBlock you will need to reset the default program again.
+* You can export the Arduino code that Scratch generates to the Arduino IDE. Make sure to download and install the correct version of the Arduino development environment to match your mBlock version.
+* After clicking the `Edit in Arduino IDE` button, the Arduino GUI will launch with your code in an editor window.
+* Make sure to shut down mBlock so there are not conflicts around the serial port.
+* Choose the board from the `Tools` menu. The mBot is based upon the `Arduino Uno`
+* Double check that the serial port is correct and connected
+* Double check that the programmer is AVRISP mkii
+* You can now compile/verify or upload to the mBot just as you did from the mBlock IDE. 
+* But at this point you have more control writing Arduino code.
+* If you go back to mBlock you will need to reset the default program again.
 
 Do not use a separate download of the Arduino GUI. You want to use the version that comes bundled with mBlock. You can launch it via the method described above. Once it is running you can save a shortcut back to this executable.
 If you use a "vanilla" version that you downloaded separately, you are likely to have compile errors and missing librarries (e.g. MeMCore.h: file not found)
 
+Here is the language reference 
 https://www.arduino.cc/en/Reference/HomePage?from=Reference.Extended
