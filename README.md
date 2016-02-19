@@ -191,7 +191,10 @@ like the motors, this does not block. Also like the motor you sometimes want to 
 
 And in both cases you can use the playing of tones much like wait statement: it blocks and uses up a small about of time
 
-## VARIABLES AND BLOCKS
+## Variables 
+TBD
+
+## Code Blocks
 TBD
 
 # Sorry, I still don't get it?
