@@ -115,7 +115,9 @@ Scratch and the Arduino Uno lends themselves best to very simple, imperative, pr
 
 1. OUTPUTS - motor 1, motor 2, on board leds, playing musical tones
 2. INPUTS - light sensor, distance sensor, line tracker, remote, on board button, timer
-3. SCRATCH - `if/then/else`, `repeat until`, `wait n sec`, `+`, `-`, `*`, `/`, `<`, `>`, `and`, `or`, `not`, `pick random 1 to 6`, variables, code blocks
+3. CONTROL - `if/then/else`, `repeat until`, `wait n sec`, 
+4. OPERATORS - `+`, `-`, `*`, `/`, `<`, `>`, `and`, `or`, `not`, `pick random 1 to 6`
+5. MISC - variables, lists, code blocks
 
 So it is best to start with simple recipes with the output devices:
 
