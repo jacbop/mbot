@@ -155,7 +155,7 @@ The other inputs (the ir remote and the button) are binary. They are either on o
 ## Blocking
 After discussing the inputs a bit, we must consider the actions we take in response to those inputs. The OUTPUTS could be playing a note or short song, turning lights on, moving the motors, or stopping the motors.
 
-We need to understand that some outputs are "blocking". By this we mean that the Arduino board will execute the task (say playing a tone) in a way that nothing else will be happening in our program. In other words, our program is blocked waiting for the task to complete. If you kick off a blocking task that takes a long time to run, it will disrupting any poll loops. So while your robot plays that fancy song in response to the distance sensor, the robot will not be able to poll to see if the button has been pressed or what the latest value on the line follower is.
+We need to understand that some outputs are "blocking". By this we mean that the Arduino board will execute the task (say playing a tone) in a way that nothing else will be happening in our program. In other words, our program is blocked waiting for the task to complete. If you kick off a blocking task that takes a long time to run, it will disrupt any poll loops. So while your robot plays that fancy song in response to the distance sensor, the robot will not be able to poll to see if the button has been pressed or what the latest value on the line follower is. It may veer off course and not respond to you mashing the buttons on the remote until the sounds are done playing.
 
 It is worth going through each output:
 
@@ -168,8 +168,10 @@ play tone on note F4 beat Whole
 ```
 Your mBot is going to be unresponsive for several seconds while these tones are played. If you put this in a loop, it will play over and over again and you will only be polling every several seconds. If you are polling for a button press, you might miss it if you don't time things correctly.
 
+There is not an easy way around this in Scratch, so just be careful with how you use tones so that you do not wind up polling too slow and undersampling continuous inputs (sensors) or missing events on the binary inputs (switches).
+
 ### set motor speed
-this returns immediately and will not block, but the motor speed will remain set, even if the program exits. Remember to set the speed to zero at the end of your program so that the motor does not keep running.
+this returns immediately and will not block, but the motor speed will remain set and the wheels keep on turning, even after the program exits. Remember to set the speed to zero at the end of your program so that the motor does not keep running.
 It is great that this does not block, but it presents a new problem... How to do tell the motor to go forward for 5 seconds?
 You can simply set the speed and then add a `wait n sec` afterwards.
 
@@ -193,6 +195,8 @@ repeat until <timer > 5> {
 like the motors, this does not block. Also like the motor you sometimes want to block for a little bit, for example to make them flash at differnet rates. You can use the same solutions: `wait n sec` or `repeat until <timer > n>`
 
 And in both cases you can use the playing of tones much like wait statement: it blocks and uses up a small about of time
+
+Like the motor, LEDs will stay on even when the program exists. You may want to set them to be off at the end of your program.
 
 ## Variables 
 TBD
