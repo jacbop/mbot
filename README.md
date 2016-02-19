@@ -111,10 +111,11 @@ After cloning simply open up mBot-default-program.ino in the Arduino IDE
 # Programming
 
 ## Imperative
-Scratch and the Arduino Uno lends themselves best to very simple, imperative, procedural code. There are no functions, no multithreading, no fancy data structures, only the most simple of scoping for variables. The tools at you disposal include:
-1) OUTPUTS - motor 1, motor 2, on board leds, playing musical tones
-2) INPUTS - light sensor, distance sensor, line tracker, remote, on board button, timer
-3) SCRATCH - `if/then/else`, `repeat until`, `wait n sec`, `+`, `-`, `*`, `/`, `<`, `>`, `and`, `or`, `not`, `pick random 1 to 6`, variables, code blocks
+Scratch and the Arduino Uno lends themselves best to very simple, imperative, procedural code. There are no functions, no multithreading, no fancy data structures, only the most simple of scoping for variables. The tools at your disposal include:
+
+1. OUTPUTS - motor 1, motor 2, on board leds, playing musical tones
+2. INPUTS - light sensor, distance sensor, line tracker, remote, on board button, timer
+3. SCRATCH - `if/then/else`, `repeat until`, `wait n sec`, `+`, `-`, `*`, `/`, `<`, `>`, `and`, `or`, `not`, `pick random 1 to 6`, variables, code blocks
 
 So it is best to start with simple recipes with the output devices:
 
@@ -135,15 +136,18 @@ But you will find this getting boring quickly. The next step is to integrate inp
 But all of these inputs require "sampling" or "polling". That means you have to check over and over to check what the sensor value is. For instance, if you want to use the light sensor to control the speed of the motors (brighter means faster), you will need a loop. Something like:
 
 ```
+wait until <button pressed>
 repeat until <ir remote F pressed> {
   set motorSpeedVariable to (light sensor light sensor on board / 10)
   run forward at speed motorSpeedVariable
 }
 ```
 
-The light sensor value is constantly changing, but our program has to repeatedly poll to know the value. The same is true for the distance sensor, the line tracker and the timer. We are polling or sampling a sliding value periodically.
+Here the button acts like the "on switch" and the F button on the remote acts like an "off switch". The light sensor acts like the accelerator pedal.
 
-The other inputs (the ir remote and the button) are binary. They are either on or off. You could view this as a special case of the other sensor, but rather than allowable values of 0-1000 for, say, the light sensor, the buttons just have 2 possible values. In stratch you also poll or sample these values, but rather than getting back a number you get back a boolean. For example <button pressed> and <button released>. We usually want to pair these boolean values with a `wait until <>` or a `repeat until <>`. This is what the outer `repeat util <>` block in the example above does.
+The light sensor value is constantly changing, and our program has to repeatedly poll in order to know the value. The same is true for the distance sensor, the line tracker and the timer. We are polling or sampling a (potentially) changing value periodically.
+
+The other inputs (the ir remote and the button) are binary. They are either on or off. You could view this as a special case of the other sensors, but rather than allowable values of 0-255, the buttons just have 2 possible values. In Stratch you also poll or sample these values, but rather than getting back a number you get back a boolean. For example <button pressed> and <button released>. We usually want to pair these boolean values with a `wait until <>` or a `repeat until <>`. This is what the outer `repeat util <>` block in the example above does.
 
 ## Blocking
 After discussing the inputs a bit, we must consider the actions we take in response to those inputs. The OUTPUTS could be playing a note or short song, turning lights on, moving the motors, or stopping the motors.
@@ -164,16 +168,16 @@ Your mBot is going to be unresponsive for several seconds while these tones are 
 ### set motor speed
 this returns immediately and will not block, but the motor speed will remain set, even if the program exits. Remember to set the speed to zero at the end of your program so that the motor does not keep running.
 It is great that this does not block, but it presents a new problem... How to do tell the motor to go forward for 5 seconds?
-You can simply set the speed and then add a `wait n sec` afterwards
+You can simply set the speed and then add a `wait n sec` afterwards.
 
 ```
 run forward at speed 100
 wait 5 sec
 ```
 
-Setting the motor speed does not block, but the wait 5 sec does
+Setting the motor speed does not block, but the wait 5 sec does.
 
-You could also use the timer if you don't want to block. Perhaps you want to keep polling and adjusting the speed, but you only want the motor on for a maximum of 5 sec
+You could also use the timer if you don't want to block. Perhaps you want to keep polling and adjusting the speed, but you only want the motor on for a maximum of 5 sec.
 ```
 reset timer
 repeat until <timer > 5> {
