@@ -130,10 +130,11 @@ stop
 ```
 
 This is a very simple imperative program with no loops, no control structures. Like a recipe for cookies.
+You can adapt such a program to play a recipe of sounds, or flash the LEDs in a prescribed manner.
 
 ## Control Structures
 
-But you will find this getting boring quickly. The next step is to integrate inputs from sensors (light sensor, distance sensor, remote, the button, the timer).
+But you will find this getting boring quickly. The next step is to integrate inputs from sensors (light sensor, distance sensor, remote, the button, the timer) together with one or more of the outputs.
 
 But all of these inputs require "sampling" or "polling". That means you have to check over and over to check what the sensor value is. For instance, if you want to use the light sensor to control the speed of the motors (brighter means faster), you will need a loop. Something like:
 
