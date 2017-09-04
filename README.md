@@ -28,7 +28,7 @@ These are the two ways to launch the program you write:
 ### when (green flag) clicked
 This is what I call dev mode. It lets me run the user program while still connected to the USB. I also tend to perch the mBot on top of a small drinking glass. This acts like a mini car lift to keep the wheels off the ground while developing and testing.
 
-###mBot Program
+### mBot Program
 This is the code that will be uploaded to Arduino and run on the mBot
 
 Note mBot programs can only use a subset of scratch commands. Things like `Motion` and `Looks` and `Pen` are just for desktop Scratch programs designed to run on your computer. It makes no sense, for example, to make the Panda say something in or move him across the screen when the program is meant to run on the mBot (which has no keyboard, no screen).
